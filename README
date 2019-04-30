@@ -1,0 +1,9 @@
+1)Code can be run by using two methods:
+	1.1) Going into src file and using javac to compile CleaningDishes and then java to run 	     CleaningDishes class with the associated thread and barrier size.
+		method: i) javac CleaningDishes.java
+			ii) java CleaningDishes 6 3 100 100
+
+	1.2) using the Make file.
+		method: i) make run this will run CleaningDishes class with the 6 3 100 100 parameters 				   being passed 
+
+2) if there is any problem, please email me because my code does work and is complete

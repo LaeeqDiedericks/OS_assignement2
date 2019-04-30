@@ -1,0 +1,144 @@
+
+*** These modified files were found in JOE when it aborted on Tue Apr 30 16:10:07 2019
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+rmargin
+
+*** File '(Unnamed)'
+root
+root
+
+*** File 'WetDishRack.java'
+import java.util.concurrent.Semaphore;
+
+public class WetDishRack {
+	// add variables
+	Semaphore semaphore1;
+	Semaphore semaphore2;
+	Semaphore semaphore3;
+	int counter;
+	int removeCounter;
+	int[] buffer_size;
+	
+	
+
+	WetDishRack(int rackSize) {
+	    // add correct code here
+	    this.semaphore1 = new Semaphore(0);
+	    this.semaphore2 = new Semaphore(1);
+	    this.semaphore3 = new Semaphore(rackSize);
+	    this.counter = rackSize;
+	     
+	}
+	
+	public void addDish(int dish_id)  throws InterruptedException {
+		// add correct code here
+		semaphore3.acquire();
+		semaphore2.acquire();
+		buffer_size.add(dish_id);
+		semaphore2.release();
+		semaphore1.release();
+	}
+	
+	public int removeDish() throws InterruptedException {
+		semaphore1.acquire();
+		semaphore2.acquire();
+		removeCounter = (Integer)buffer_size.remove(0);
+		semaphore2.release();
+		semaphore3.release();
+		return removeCounter; // replace with correct code here
+	}
+	
+}
+
+
+
+
+*** File '(Unnamed)'
+Barrier.java
+BThread.java
+src/Barrier.java
+Barrier.java
+BarrierS/Barrier.java
+Barrier.java
+Barrier.java
+src/Barrier.java
+WetDishRack.java
+WetDishRack.java
+WetDishRack.java
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Tue Apr 30 16:12:02 2019
+*** JOE was aborted by UNIX signal 1
+
+*** File 'WetDishRack.java'
+import java.util.concurrent.Semaphore;
+
+public class WetDishRack {
+        // add variables
+        Semaphore semaphore1;
+        Semaphore semaphore2;
+        Semaphore semaphore3;
+        int counter;
+        int removeCounter;
+        int[] buffer_size;
+
+
+
+        WetDishRack(int rackSize) {
+            // add correct code here
+            this.semaphore1 = new Semaphore(0);
+            this.semaphore2 = new Semaphore(1);
+            this.semaphore3 = new Semaphore(rackSize);
+            this.counter = rackSize;
+         
+        }
+ 
+        public void addDish(int dish_id)  throws InterruptedException {
+                // add correct code here
+                semaphore3.acquire();
+                semaphore2.acquire();
+                buffer_size.add(dish_id);
+                semaphore2.release();
+                semaphore1.release();
+        }
+ 
+        public int removeDish() throws InterruptedException {
+                semaphore1.acquire();
+                semaphore2.acquire();
+                removeCounter = (Integer)buffer_size.remove(0);
+                semaphore2.release();
+                semaphore3.release();
+                return removeCounter; // replace with correct code here
+        }
+ 
+}
+
+
+
+
+
+*** File '(Unnamed)'
+Barrier.java
+BThread.java
+src/Barrier.java
+Barrier.java
+BarrierS/Barrier.java
+Barrier.java
+Barrier.java
+src/Barrier.java
+WetDishRack.java
+WetDishRack.java
+WetDishRack.java
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
