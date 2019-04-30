@@ -1,7 +1,3 @@
-# HelloWorld program makefile
-# Hussein Suleman
-# 26 February 2018
-
 JAVAC=/usr/bin/javac
 .SUFFIXES: .java .class
 
@@ -22,6 +18,10 @@ clean:
 
 temp:
 	echo $(CLASSES)
+
+run:
+	java -cp ./bin CleaningDishes 6 3 100 100
+
 
 
 
